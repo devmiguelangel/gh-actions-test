@@ -19,9 +19,11 @@ jobs:
         with:
           python-version: 3.8
 
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
       - name: pylint and flake8
         run: |
-          pip install -r requirements.txt
           flake8 --ignore=E501,E231 *.py tests/*.py
           pylint --errors-only --disable=C0301 --disable=C0326 *.py tests/*.py
 
