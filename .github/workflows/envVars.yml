@@ -4,7 +4,11 @@ env:
   WORKSPACE_ENVIRONMENT_VARIABLE: 'Workspace environment variable'
   OVER_RIDE: 'Workflow'
 
-on: [push]
+on:
+  push:
+    branches:
+      - 03-env-vars
+
 jobs:
   ubuntu:
     env:
