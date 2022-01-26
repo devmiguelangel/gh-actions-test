@@ -1,0 +1,29 @@
+name: Python test
+
+on:
+  push:
+    branches:
+      - 06-python-test
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./python_app
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Python setup
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: pylint and flake8
+        run: |
+          pip install -r requirements.txt
+          flake8 --ignore=E501,E231 *.py tests/*.py
+          pylint --errors-only --disable=C0301 --disable=C0326 *.py tests/*.py
+
+      - name: unit test
+        run: python -m unittest --verbose --failfast
