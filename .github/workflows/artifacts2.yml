@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      FILE_PATH: "/home/info.txt"
+      FILE_PATH: "info.txt"
       FILE_NAME: "INFO"
 
     steps:
