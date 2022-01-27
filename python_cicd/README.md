@@ -1,3 +1,5 @@
+# Build Status Badge: ![](https://github.com/devmiguelangel/gh-actions-test/workflows/Pipeline/badge.svg)
+
 # Use Case: Continuous Integration
 Continuous Integration with GitHub Actions
 
