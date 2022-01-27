@@ -10,7 +10,20 @@ defaults:
     working-directory: ./python_cicd
 
 jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python environment
+        uses: actions/setup-python@v2
+
+      - name: Run script
+        run: python hello.py
+
   lint:
+    needs: [hello]
+
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
